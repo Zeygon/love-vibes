@@ -1,6 +1,6 @@
 // Our amazing database
 
-var samples = ["https://swaghack.scapp.io/data/sample_a.mp3", "https://swaghack.scapp.io/data/sample_b.mp3"];
+var samples = ["https://swaghack.scapp.io/data/no.mp3", "https://swaghack.scapp.io/data/yes.mp3"];
 
 
 module.change_code = 1;
@@ -11,7 +11,7 @@ var app = new alexa.app('love-vibes');
 
 
 app.launch(function(request, response) {
-    response.say('You again! I just found this story, what do you think? <audio src="' + samples[0] + '" />  Did you like it?').shouldEndSession(false);
+    response.say('Hey, let\' dive in with this story I found for you, what do you think? <audio src="' + samples[0] + '" />  Did you like it?').shouldEndSession(false);
 });
 
 
@@ -32,7 +32,7 @@ app.intent('NoIntent', {
         ]
     },
     function(request, response) {
-        response.say('Ok. I\'ll try something different, maybe you\'ll like this: <audio src="' + samples[1] + '" />   How did you like this?').shouldEndSession(false);
+        response.say('Hm. You\'re probably right. Maybe you\'ll like this: <audio src="' + samples[1] + '" />   How did you like this?').shouldEndSession(false);
     }
 );
 
@@ -46,7 +46,7 @@ app.intent('YesIntent', {
         ]
     },
     function(request, response) {
-        response.say('Cool. <break time="1s" /> Hey you\'ve got a match! Now it\'s your turn to record a little answer to start up a nice and lovely conversation! Prepare.... Ready. Steady. Go!  <break time="10s"/> ').shouldEndSession(true);
+        response.say('Cool. <break time="1s" /> Hey you\'ve got a match! Now it\'s your turn to record a little answer to start up a nice and lovely conversation! Prepare.... Ready. Steady. Go!  <break time="1s"/> ').shouldEndSession(true);
 
     }
 );
